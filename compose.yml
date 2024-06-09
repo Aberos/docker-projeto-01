@@ -1,0 +1,13 @@
+services:
+  apache:
+    image: httpd:latest
+    container_name: apache-app
+    ports:
+      - 80:80
+    volumes:
+      - ./app:/usr/local/apache2/htdocs/
+    networks:
+      - app-net
+
+networks:
+  app-net:
